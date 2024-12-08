@@ -66,17 +66,6 @@ Des images sont disponibles dans le dossier :
 ```
 src/MVC/view/Gui/images
 ```
-
----
-
-## Contribution
-Les contributions sont les bienvenues. Veuillez suivre les étapes suivantes :
-1. Forkez ce dépôt.
-2. Créez une branche pour votre fonctionnalité : `git checkout -b feature/AmazingFeature`.
-3. Faites un commit : `git commit -m 'Ajout d\'une fonctionnalité incroyable'`.
-4. Poussez la branche : `git push origin feature/AmazingFeature`.
-5. Créez une Pull Request.
-
 ---
 
 ## Auteur

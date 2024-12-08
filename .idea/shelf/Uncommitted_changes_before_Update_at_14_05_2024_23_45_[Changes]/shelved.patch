@@ -1,0 +1,153 @@
+Index: src/MVC/view/Gui/JdialogNouveauClient.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package MVC.view.Gui;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.event.*;\r\n\r\npublic class JdialogNouveauClient extends JDialog {\r\n    private JPanel contentPane;\r\n    private JButton buttonCreer;\r\n    private JButton buttonAnnuler;\r\n    private JTextField textFieldNom;\r\n    private JTextField textFieldPrenom;\r\n    private JTextField textFieldGSM;\r\n    private String nom;\r\n    private JLabel JLabelNom;\r\n    private JLabel JLabelPrenom;\r\n    private JLabel JLabelGSM;\r\n    private String prenom;\r\n    private String gsm;\r\n\r\n    public JdialogNouveauClient() {\r\n\r\n        JDialogConnexion formconnection=new JDialogConnexion();\r\n        if(!formconnection.getconnecte()){\r\n            formconnection.pack();\r\n            formconnection.setVisible(true);\r\n            formconnection.setConnecte(true);\r\n        }\r\n        if(formconnection.getconnecte()) {\r\n            setContentPane(contentPane);\r\n            setModal(true);\r\n            getRootPane().setDefaultButton(buttonCreer);\r\n            setTitle(\"----| Nouveau Client |----\");\r\n\r\n            buttonCreer.addActionListener(new ActionListener() {\r\n                public void actionPerformed(ActionEvent e) {\r\n                    nom = textFieldNom.getText();\r\n                    prenom = textFieldPrenom.getText();\r\n                    gsm = textFieldGSM.getText();\r\n                    setVisible(false); // Assumant que vous souhaitez fermer ce dialogue après création.\r\n                }\r\n            });\r\n\r\n            buttonAnnuler.addActionListener(new ActionListener() {\r\n                public void actionPerformed(ActionEvent e) {\r\n                    setVisible(false);\r\n                }\r\n            });\r\n\r\n            // Gérer la fermeture de la fenêtre via la croix\r\n            setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);\r\n            addWindowListener(new WindowAdapter() {\r\n                public void windowClosing(WindowEvent e) {\r\n                    onCancel();\r\n                }\r\n            });\r\n        }\r\n    }\r\n\r\n    private void onCancel() {\r\n        // Mettez ici le code à exécuter lorsque l'utilisateur ferme le dialogue via la croix\r\n        setVisible(false);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        JdialogNouveauClient dialog = new JdialogNouveauClient();\r\n        dialog.pack();\r\n        dialog.setVisible(true);\r\n        System.exit(0);\r\n    }\r\n\r\n    public String getNom() {\r\n        return nom;\r\n    }\r\n\r\n    public String getPrenom() {\r\n        return prenom;\r\n    }\r\n\r\n    public String getGSM() {\r\n        return gsm;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/MVC/view/Gui/JdialogNouveauClient.java b/src/MVC/view/Gui/JdialogNouveauClient.java
+--- a/src/MVC/view/Gui/JdialogNouveauClient.java	(revision 218b98da609c45b27aecadd1094e9edbc109928b)
++++ b/src/MVC/view/Gui/JdialogNouveauClient.java	(date 1715726422890)
+@@ -1,7 +1,9 @@
+ package MVC.view.Gui;
+ 
++
+ import javax.swing.*;
+ import java.awt.event.*;
++import java.util.ArrayList;
+ 
+ public class JdialogNouveauClient extends JDialog {
+     private JPanel contentPane;
+@@ -61,6 +63,7 @@
+         setVisible(false);
+     }
+ 
++
+     public static void main(String[] args) {
+         JdialogNouveauClient dialog = new JdialogNouveauClient();
+         dialog.pack();
+@@ -79,4 +82,6 @@
+     public String getGSM() {
+         return gsm;
+     }
++//----------------------------------------------------------------
++
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6102baac-c2d9-496a-bebd-d3f18fb61273\" name=\"Changes\" comment=\"ajout du Controlleur et view\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eJsVVfbofTnEttMu73EXuGqIi8\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Appartement.executor\": \"Run\",\r\n    \"Application.Client.executor\": \"Run\",\r\n    \"Application.DAOAppartements.executor\": \"Run\",\r\n    \"Application.DAOClients.executor\": \"Run\",\r\n    \"Application.DAOEmployes.executor\": \"Run\",\r\n    \"Application.Employe.executor\": \"Run\",\r\n    \"Application.JDialogAppart.executor\": \"Run\",\r\n    \"Application.JDialogConnexion.executor\": \"Run\",\r\n    \"Application.JDialogNewClient.executor\": \"Run\",\r\n    \"Application.JDialogNouveauEmploye.executor\": \"Run\",\r\n    \"Application.JDialogNouvelAppart.executor\": \"Run\",\r\n    \"Application.JFrameFenetreFinal.executor\": \"Run\",\r\n    \"Application.JFrameReservation.executor\": \"Run\",\r\n    \"Application.JdialogNouveauClient.executor\": \"Run\",\r\n    \"Application.MVC.model.entity.Client.executor\": \"Run\",\r\n    \"Application.MVC.model.entity.Employe.executor\": \"Run\",\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"Application.Option.executor\": \"Run\",\r\n    \"Application.Personne.executor\": \"Run\",\r\n    \"Application.Reservation.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH\": \"110\",\r\n    \"UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH\": \"229\",\r\n    \"git-widget-placeholder\": \"stanela\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"D:/JAVA/GestionProjetJava/src/MVC\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"configurable.group.editor\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\JAVA\\GestionProjetJava\\src\\MVC\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.JFrameFenetreFinal\">\r\n    <configuration name=\"JDialogNouvelAppart\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JDialogNouvelAppart\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JDialogconnexion\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JDialogconnexion\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JDialogmessage\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JDialogmessage\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JFrameFenetreFinal\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JFrameFenetreFinal\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JdialogNouveauClient\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JdialogNouveauClient\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.JFrameFenetreFinal\" />\r\n        <item itemvalue=\"Application.JDialogNouvelAppart\" />\r\n        <item itemvalue=\"Application.JdialogNouveauClient\" />\r\n        <item itemvalue=\"Application.JDialogmessage\" />\r\n        <item itemvalue=\"Application.JDialogconnexion\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-22-openjdk-22-4caba194b151-f504ca98\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6102baac-c2d9-496a-bebd-d3f18fb61273\" name=\"Changes\" comment=\"\" />\r\n      <created>1711634042286</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1711634042286</updated>\r\n      <workItem from=\"1711634043357\" duration=\"13874000\" />\r\n      <workItem from=\"1711708174507\" duration=\"3695000\" />\r\n      <workItem from=\"1712010116714\" duration=\"949000\" />\r\n      <workItem from=\"1712049159798\" duration=\"9359000\" />\r\n      <workItem from=\"1712078855309\" duration=\"11180000\" />\r\n      <workItem from=\"1712219675115\" duration=\"7260000\" />\r\n      <workItem from=\"1712824690703\" duration=\"5698000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class vide\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712010749666</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712010749666</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"creation de boite de dialog, empl et client\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712059680293</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712059680293</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"creation de la boite dialog new appart + GUI\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712088015128</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712088015128</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ajout de photo appart\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712088035700</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712088035700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"correction et adaptation des classe, il reste Reservation.java\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712092470623</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712092470623</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"on est pret pour la 1er Eval\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712226894342</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712226894342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"ajout package MVC\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712825209851</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712825209851</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"ajout package MVC2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712825394869</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712825394869</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"ajout du Controlleur et view\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713199033351</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713199033351</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"ajout du Controlleur et view\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715714910323</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715714910323</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class vide\" />\r\n    <MESSAGE value=\"creation de boite de dialog, empl et client\" />\r\n    <MESSAGE value=\"creation de la boite dialog new appart + GUI\" />\r\n    <MESSAGE value=\"ajout de photo appart\" />\r\n    <MESSAGE value=\"correction et adaptation des classe, il reste Reservation.java\" />\r\n    <MESSAGE value=\"on est pret pour la 1er Eval\" />\r\n    <MESSAGE value=\"ajout package MVC\" />\r\n    <MESSAGE value=\"ajout package MVC2\" />\r\n    <MESSAGE value=\"Merge pull request #1 from 0994812157/stanela&#10;&#10;ajout package MVC2\" />\r\n    <MESSAGE value=\"ajout du Controlleur et view\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ajout du Controlleur et view\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.java</url>\r\n          <line>63</line>\r\n          <properties class=\"MVC.view.Gui.JdialogNouveauClient\" method=\"main\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 218b98da609c45b27aecadd1094e9edbc109928b)
++++ b/.idea/workspace.xml	(date 1715726741807)
+@@ -5,7 +5,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="6102baac-c2d9-496a-bebd-d3f18fb61273" name="Changes" comment="ajout du Controlleur et view">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_05_2024_10_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_05_2024_10_59__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_20_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_20_23__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2024_19_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2024_19_01__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_04_2024_19_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_04_2024_19_07__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -70,7 +75,7 @@
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "110",
+     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "229",
+-    "git-widget-placeholder": "stanela",
++    "git-widget-placeholder": "stanela1",
+     "kotlin-language-version-configured": "true",
+     "last_opened_file_path": "D:/JAVA/GestionProjetJava/src/MVC",
+     "node.js.detected.package.eslint": "true",
+@@ -87,7 +92,7 @@
+       <recent name="D:\JAVA\GestionProjetJava\src\MVC" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.JFrameFenetreFinal">
++  <component name="RunManager" selected="Application.JdialogNouveauClient">
+     <configuration name="JDialogNouvelAppart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="MVC.view.Gui.JDialogNouvelAppart" />
+       <module name="GestionProjetJava" />
+@@ -155,9 +160,9 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.JdialogNouveauClient" />
+         <item itemvalue="Application.JFrameFenetreFinal" />
+         <item itemvalue="Application.JDialogNouvelAppart" />
+-        <item itemvalue="Application.JdialogNouveauClient" />
+         <item itemvalue="Application.JDialogmessage" />
+         <item itemvalue="Application.JDialogconnexion" />
+       </list>
+@@ -258,20 +263,35 @@
+       <option name="project" value="LOCAL" />
+       <updated>1713199033351</updated>
+     </task>
+-    <task id="LOCAL-00010" summary="ajout du Controlleur et view">
+-      <option name="closed" value="true" />
+-      <created>1715714910323</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1715714910323</updated>
+-    </task>
+-    <option name="localTasksCounter" value="11" />
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/stanela" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="class vide" />
+     <MESSAGE value="creation de boite de dialog, empl et client" />
+@@ -285,19 +305,4 @@
+     <MESSAGE value="ajout du Controlleur et view" />
+     <option name="LAST_COMMIT_MESSAGE" value="ajout du Controlleur et view" />
+   </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-method">
+-          <url>file://$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.java</url>
+-          <line>63</line>
+-          <properties class="MVC.view.Gui.JdialogNouveauClient" method="main">
+-            <option name="EMULATED" value="true" />
+-            <option name="WATCH_EXIT" value="false" />
+-          </properties>
+-          <option name="timeStamp" value="3" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+-  </component>
+ </project>
+\ No newline at end of file

@@ -1,0 +1,410 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_15_04_2024_14_57_[Changes]" date="1713185891584" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 15/04/2024 14:57 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57_[Changes]/shelved.patch	
++++ /dev/null	
+@@ -1,391 +0,0 @@
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6102baac-c2d9-496a-bebd-d3f18fb61273\" name=\"Changes\" comment=\"ajout package MVC2\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/MVC/model/entity/AppartementException.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/MVC/model/entity/PersonneException.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/model/entity/Appartement.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/model/entity/Appartement.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/model/entity/Client.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/model/entity/Client.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/model/entity/Employe.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/model/entity/Employe.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/model/entity/Personne.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/model/entity/Personne.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JDialogConnexion.form\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JDialogConnexion.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouveauEmploye.form\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouveauEmploye.form\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouvelAppart.form\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouvelAppart.form\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JFrameFenetreFinal.form\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/view/Gui/JFrameFenetreFinal.form\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.form\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.form\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.form\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.form\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eJsVVfbofTnEttMu73EXuGqIi8\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Appartement.executor\": \"Run\",\r\n    \"Application.Client.executor\": \"Run\",\r\n    \"Application.Employe.executor\": \"Run\",\r\n    \"Application.JDialogAppart.executor\": \"Run\",\r\n    \"Application.JDialogConnexion.executor\": \"Run\",\r\n    \"Application.JDialogNewClient.executor\": \"Run\",\r\n    \"Application.JDialogNouveauEmploye.executor\": \"Run\",\r\n    \"Application.JDialogNouvelAppart.executor\": \"Run\",\r\n    \"Application.JFrameFenetreFinal.executor\": \"Run\",\r\n    \"Application.JFrameReservation.executor\": \"Run\",\r\n    \"Application.JdialogNouveauClient.executor\": \"Run\",\r\n    \"Application.MVC.model.entity.Client.executor\": \"Run\",\r\n    \"Application.MVC.model.entity.Employe.executor\": \"Run\",\r\n    \"Application.Option.executor\": \"Run\",\r\n    \"Application.Personne.executor\": \"Run\",\r\n    \"Application.Reservation.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH\": \"110\",\r\n    \"UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH\": \"229\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"D:/JAVA/GestionProjetJava/src/MVC\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"configurable.group.editor\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\JAVA\\GestionProjetJava\\src\\MVC\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.MVC.model.entity.Client\">\r\n    <configuration name=\"Appartement\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.model.entity.Appartement\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.model.entity.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Employe\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"hepl.java.MVC.model.entity.Employe\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"hepl.java.MVC.model.entity.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MVC.model.entity.Client\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.model.entity.Client\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.model.entity.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MVC.model.entity.Employe\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.model.entity.Employe\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.model.entity.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Personne\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.model.entity.Personne\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.model.entity.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MVC.model.entity.Client\" />\r\n        <item itemvalue=\"Application.MVC.model.entity.Employe\" />\r\n        <item itemvalue=\"Application.Personne\" />\r\n        <item itemvalue=\"Application.Appartement\" />\r\n        <item itemvalue=\"Application.Employe\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-22-openjdk-22-4caba194b151-f504ca98\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6102baac-c2d9-496a-bebd-d3f18fb61273\" name=\"Changes\" comment=\"\" />\r\n      <created>1711634042286</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1711634042286</updated>\r\n      <workItem from=\"1711634043357\" duration=\"13874000\" />\r\n      <workItem from=\"1711708174507\" duration=\"3695000\" />\r\n      <workItem from=\"1712010116714\" duration=\"949000\" />\r\n      <workItem from=\"1712049159798\" duration=\"9359000\" />\r\n      <workItem from=\"1712078855309\" duration=\"11180000\" />\r\n      <workItem from=\"1712219675115\" duration=\"7260000\" />\r\n      <workItem from=\"1712824690703\" duration=\"5698000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class vide\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712010749666</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712010749666</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"creation de boite de dialog, empl et client\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712059680293</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712059680293</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"creation de la boite dialog new appart + GUI\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712088015128</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712088015128</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ajout de photo appart\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712088035700</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712088035700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"correction et adaptation des classe, il reste Reservation.java\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712092470623</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712092470623</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"on est pret pour la 1er Eval\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712226894342</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712226894342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"ajout package MVC\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712825209851</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712825209851</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"ajout package MVC2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712825394869</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712825394869</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class vide\" />\r\n    <MESSAGE value=\"creation de boite de dialog, empl et client\" />\r\n    <MESSAGE value=\"creation de la boite dialog new appart + GUI\" />\r\n    <MESSAGE value=\"ajout de photo appart\" />\r\n    <MESSAGE value=\"correction et adaptation des classe, il reste Reservation.java\" />\r\n    <MESSAGE value=\"on est pret pour la 1er Eval\" />\r\n    <MESSAGE value=\"ajout package MVC\" />\r\n    <MESSAGE value=\"ajout package MVC2\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ajout package MVC2\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision a5138b01935f2982821425f26782823df500fc4d)
+-+++ b/.idea/workspace.xml	(date 1713185852799)
+-@@ -4,22 +4,12 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="6102baac-c2d9-496a-bebd-d3f18fb61273" name="Changes" comment="ajout package MVC2">
+--      <change afterPath="$PROJECT_DIR$/src/MVC/model/entity/AppartementException.java" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/src/MVC/model/entity/PersonneException.java" afterDir="false" />
+-+    <list default="true" id="6102baac-c2d9-496a-bebd-d3f18fb61273" name="Changes" comment="ajout package MVC3">
+-+      <change afterPath="$PROJECT_DIR$/src/MVC/controller/Controlleur.java" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/src/MVC/model/DAO/DAOAppartements.java" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/src/MVC/model/DataAccesLayer.java" afterDir="false" />
+-+      <change afterPath="$PROJECT_DIR$/src/MVC/view/ViewAppart.java" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/model/entity/Appartement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/model/entity/Appartement.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/model/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/model/entity/Client.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/model/entity/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/model/entity/Employe.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/model/entity/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/model/entity/Personne.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogConnexion.form" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogConnexion.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouveauEmploye.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouveauEmploye.form" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouvelAppart.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogNouvelAppart.form" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JFrameFenetreFinal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JFrameFenetreFinal.form" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.form" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JFrameReservation.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.form" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -36,6 +26,7 @@
+-   </component>
+-   <component name="Git.Settings">
+-     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-+    <option name="UPDATE_TYPE" value="REBASE" />
+-   </component>
+-   <component name="ProjectColorInfo">{
+-   &quot;associatedIndex&quot;: 2
+-@@ -46,41 +37,41 @@
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-   </component>
+--  <component name="PropertiesComponent"><![CDATA[{
+--  "keyToString": {
+--    "Application.Appartement.executor": "Run",
+--    "Application.Client.executor": "Run",
+--    "Application.Employe.executor": "Run",
+--    "Application.JDialogAppart.executor": "Run",
+--    "Application.JDialogConnexion.executor": "Run",
+--    "Application.JDialogNewClient.executor": "Run",
+--    "Application.JDialogNouveauEmploye.executor": "Run",
+--    "Application.JDialogNouvelAppart.executor": "Run",
+--    "Application.JFrameFenetreFinal.executor": "Run",
+--    "Application.JFrameReservation.executor": "Run",
+--    "Application.JdialogNouveauClient.executor": "Run",
+--    "Application.MVC.model.entity.Client.executor": "Run",
+--    "Application.MVC.model.entity.Employe.executor": "Run",
+--    "Application.Option.executor": "Run",
+--    "Application.Personne.executor": "Run",
+--    "Application.Reservation.executor": "Run",
+--    "RunOnceActivity.OpenProjectViewOnStart": "true",
+--    "RunOnceActivity.ShowReadmeOnStart": "true",
+--    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+--    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "110",
+--    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "229",
+--    "git-widget-placeholder": "main",
+--    "kotlin-language-version-configured": "true",
+--    "last_opened_file_path": "D:/JAVA/GestionProjetJava/src/MVC",
+--    "node.js.detected.package.eslint": "true",
+--    "node.js.detected.package.tslint": "true",
+--    "node.js.selected.package.eslint": "(autodetect)",
+--    "node.js.selected.package.tslint": "(autodetect)",
+--    "nodejs_package_manager_path": "npm",
+--    "settings.editor.selected.configurable": "configurable.group.editor",
+--    "vue.rearranger.settings.migration": "true"
+-+  <component name="PropertiesComponent">{
+-+  &quot;keyToString&quot;: {
+-+    &quot;Application.Appartement.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.Employe.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JDialogAppart.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JDialogConnexion.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JDialogNewClient.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JDialogNouveauEmploye.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JDialogNouvelAppart.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JFrameFenetreFinal.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JFrameReservation.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.JdialogNouveauClient.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.MVC.model.entity.Client.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.MVC.model.entity.Employe.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.Option.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.Personne.executor&quot;: &quot;Run&quot;,
+-+    &quot;Application.Reservation.executor&quot;: &quot;Run&quot;,
+-+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;110&quot;,
+-+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;229&quot;,
+-+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/GestionProjetJava/src/MVC&quot;,
+-+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+-+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-   }
+--}]]></component>
+-+}</component>
+-   <component name="RecentsManager">
+-     <key name="CopyFile.RECENT_KEYS">
+-       <recent name="D:\JAVA\GestionProjetJava\src\MVC" />
+-@@ -92,7 +83,7 @@
+-       <module name="GestionProjetJava" />
+-       <extension name="coverage">
+-         <pattern>
+--          <option name="PATTERN" value="MVC.model.entity.*" />
+-+          <option name="PATTERN" value="MVC.model.*" />
+-           <option name="ENABLED" value="true" />
+-         </pattern>
+-       </extension>
+-@@ -100,12 +91,12 @@
+-         <option name="Make" enabled="true" />
+-       </method>
+-     </configuration>
+--    <configuration name="Employe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+--      <option name="MAIN_CLASS_NAME" value="hepl.java.MVC.model.entity.Employe" />
+-+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-+      <option name="MAIN_CLASS_NAME" value="MVC.model.entity.Client" />
+-       <module name="GestionProjetJava" />
+-       <extension name="coverage">
+-         <pattern>
+--          <option name="PATTERN" value="hepl.java.MVC.model.entity.*" />
+-+          <option name="PATTERN" value="MVC.model.*" />
+-           <option name="ENABLED" value="true" />
+-         </pattern>
+-       </extension>
+-@@ -113,12 +104,12 @@
+-         <option name="Make" enabled="true" />
+-       </method>
+-     </configuration>
+--    <configuration name="MVC.model.entity.Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+--      <option name="MAIN_CLASS_NAME" value="MVC.model.entity.Client" />
+-+    <configuration name="Employe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-+      <option name="MAIN_CLASS_NAME" value="hepl.java.MVC.model.entity.Employe" />
+-       <module name="GestionProjetJava" />
+-       <extension name="coverage">
+-         <pattern>
+--          <option name="PATTERN" value="MVC.model.entity.*" />
+-+          <option name="PATTERN" value="hepl.java.MVC.model.entity.*" />
+-           <option name="ENABLED" value="true" />
+-         </pattern>
+-       </extension>
+-@@ -131,7 +122,7 @@
+-       <module name="GestionProjetJava" />
+-       <extension name="coverage">
+-         <pattern>
+--          <option name="PATTERN" value="MVC.model.entity.*" />
+-+          <option name="PATTERN" value="MVC.model.*" />
+-           <option name="ENABLED" value="true" />
+-         </pattern>
+-       </extension>
+-@@ -144,7 +135,7 @@
+-       <module name="GestionProjetJava" />
+-       <extension name="coverage">
+-         <pattern>
+--          <option name="PATTERN" value="MVC.model.entity.*" />
+-+          <option name="PATTERN" value="MVC.model.*" />
+-           <option name="ENABLED" value="true" />
+-         </pattern>
+-       </extension>
+-@@ -183,7 +174,9 @@
+-       <workItem from="1712049159798" duration="9359000" />
+-       <workItem from="1712078855309" duration="11180000" />
+-       <workItem from="1712219675115" duration="7260000" />
+--      <workItem from="1712824690703" duration="5698000" />
+-+      <workItem from="1712824690703" duration="5822000" />
+-+      <workItem from="1713171785796" duration="679000" />
+-+      <workItem from="1713180948548" duration="4887000" />
+-     </task>
+-     <task id="LOCAL-00001" summary="class vide">
+-       <option name="closed" value="true" />
+-@@ -249,7 +242,15 @@
+-       <option name="project" value="LOCAL" />
+-       <updated>1712825394869</updated>
+-     </task>
+--    <option name="localTasksCounter" value="9" />
+-+    <task id="LOCAL-00009" summary="ajout package MVC3">
+-+      <option name="closed" value="true" />
+-+      <created>1712830644980</created>
+-+      <option name="number" value="00009" />
+-+      <option name="presentableId" value="LOCAL-00009" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1712830644980</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="10" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -264,6 +265,7 @@
+-     <MESSAGE value="on est pret pour la 1er Eval" />
+-     <MESSAGE value="ajout package MVC" />
+-     <MESSAGE value="ajout package MVC2" />
+--    <option name="LAST_COMMIT_MESSAGE" value="ajout package MVC2" />
+-+    <MESSAGE value="ajout package MVC3" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="ajout package MVC3" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: src/MVC/model/DataAccesLayer.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/MVC/model/DataAccesLayer.java b/src/MVC/model/DataAccesLayer.java
+-new file mode 100644
+---- /dev/null	(date 1713183411673)
+-+++ b/src/MVC/model/DataAccesLayer.java	(date 1713183411673)
+-@@ -0,0 +1,13 @@
+-+package MVC.model;
+-+import MVC.model.entity.Appartement;
+-+import java.util.ArrayList;
+-+import java.lang.Object;
+-+public interface DataAccesLayer {
+-+    int addAppart(Object appart);
+-+    boolean updateAppart(Object appart);
+-+    boolean deleteAppart(int id);
+-+    boolean deleteAppart(Object appart);
+-+    Object getAppartById(int id);
+-+    ArrayList<Object> getList();
+-+
+-+}
+-Index: src/MVC/view/ViewAppart.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/MVC/view/ViewAppart.java b/src/MVC/view/ViewAppart.java
+-new file mode 100644
+---- /dev/null	(date 1713183411679)
+-+++ b/src/MVC/view/ViewAppart.java	(date 1713183411679)
+-@@ -0,0 +1,15 @@
+-+package MVC.view;
+-+import MVC.model.entity.Appartement;
+-+import MVC.controller.Controlleur;
+-+
+-+import java.util.ArrayList;
+-+
+-+public interface ViewAppart {
+-+    Appartement recupAppart();
+-+    Appartement modifAppart(Appartement appart);
+-+    Integer recupAppartById();
+-+    void afficherMessage(String message);
+-+    void afficheListAppart(ArrayList<Appartement> appart);
+-+    void run();
+-+    void setController(Controlleur c);
+-+}
+-Index: src/MVC/model/DAO/DAOAppartements.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/MVC/model/DAO/DAOAppartements.java b/src/MVC/model/DAO/DAOAppartements.java
+-new file mode 100644
+---- /dev/null	(date 1713185562596)
+-+++ b/src/MVC/model/DAO/DAOAppartements.java	(date 1713185562596)
+-@@ -0,0 +1,91 @@
+-+package MVC.model.DAO;
+-+
+-+import MVC.model.DataAccesLayer;
+-+import MVC.model.entity.*;
+-+import java.lang.Object;
+-+
+-+import java.util.ArrayList;
+-+
+-+public class DAOAppartements implements DataAccesLayer {
+-+    private ArrayList<Appartement> appartements;
+-+    private static int idcourant = 1;
+-+
+-+    public DAOAppartements()
+-+    {
+-+        appartements = new ArrayList<>();
+-+    }
+-+
+-+
+-+    @Override
+-+    public int addAppart(Object appart) {
+-+        if (appart instanceof Appartement) {
+-+            ((Appartement) appart).setId(idcourant++);
+-+            appartements.add((Appartement) appart);
+-+            return ((Appartement) appart).getId();
+-+        }
+-+        return -1;
+-+    }
+-+
+-+    @Override
+-+    public boolean updateAppart(Object appart) {
+-+        if (appart instanceof Appartement) {
+-+            Appartement updateItem = (Appartement) appart;
+-+            for (int i = 0; i < appartements.size(); i++) {
+-+                if (appartements.get(i) != null &&
+-+                        ((Appartement) appartements.get(i)).getId() == updateItem.getId()) {
+-+                    appartements.set(i, updateItem);
+-+                    return true;
+-+                }
+-+            }
+-+        }
+-+        return false;
+-+    }
+-+
+-+    @Override
+-+    public boolean deleteAppart(int id) {
+-+        return appartements.removeIf(a -> a != null && ((Appartement) a).getId() == id);
+-+    }
+-+
+-+    @Override
+-+    public boolean deleteAppart(Object appart) {
+-+        return appartements.remove(appart);
+-+    }
+-+
+-+    @Override
+-+    public Object getAppartById(int id) {
+-+        for (Object a : appartements) {
+-+            if (a instanceof Appartement && ((Appartement) a).getId() == id) {
+-+                return a;
+-+            }
+-+        }
+-+        return null;
+-+    }
+-+
+-+    @Override
+-+    public ArrayList<Object> getList() {
+-+        return new ArrayList<>(appartements);
+-+    }
+-+
+-+    public static void main(String[] args) {
+-+        DataAccesLayer dao = new DAOAppartements();
+-+        try {
+-+            dao.addAppart(new Appartement());
+-+            dao.addAppart(new Appartement());
+-+            dao.addArticle(new Article("bananes",5.32f,17,false));
+-+            dao.addArticle(new Article("cerises",5.06f,8,true));
+-+            System.out.println(dao);
+-+            Article a = dao.getArticleById(3);
+-+            System.out.println("Article ayant l'id 3 = " + a);
+-+            a.setQuantite(25);
+-+            a.setPrix(8.63f);
+-+            dao.updateArticle(a);
+-+            System.out.println(dao);
+-+            dao.deleteArticle(2);
+-+            System.out.println(dao);
+-+        } catch (ArticleException e) {
+-+            System.out.println("Erreur : " + e.getMessage());
+-+        }
+-+    }
+-+
+-+
+-+}
+-Index: src/MVC/controller/Controlleur.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/MVC/controller/Controlleur.java b/src/MVC/controller/Controlleur.java
+-new file mode 100644
+---- /dev/null	(date 1713183411653)
+-+++ b/src/MVC/controller/Controlleur.java	(date 1713183411653)
+-@@ -0,0 +1,13 @@
+-+package MVC.controller;
+-+import MVC.model.DataAccesLayer;
+-+import MVC.view.ViewAppart;
+-+import java.awt.event.ActionEvent;
+-+import java.awt.event.ActionListener;
+-+
+-+public final class Controlleur implements ActionListener {
+-+
+-+    @Override
+-+    public void actionPerformed(ActionEvent e) {
+-+
+-+    }
+-+}

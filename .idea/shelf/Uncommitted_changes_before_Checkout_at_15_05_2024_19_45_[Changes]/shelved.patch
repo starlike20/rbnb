@@ -1,0 +1,598 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import MVC.controller.Controlleur;\r\nimport MVC.model.DAO.DAOAppartements;\r\nimport MVC.model.DAO.DAOEmployes;\r\nimport MVC.view.console.ViewAppartConsole;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        //System.out.println(\"Hello world!\");\r\n        Controlleur controlleur = new Controlleur(new DAOEmployes(),new ViewAppartConsole());\r\n        controlleur.run();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	
++++ b/src/Main.java	
+@@ -1,12 +1,20 @@
+ import MVC.controller.Controlleur;
++import MVC.controller.controller;
+ import MVC.model.DAO.DAOAppartements;
+ import MVC.model.DAO.DAOEmployes;
++import MVC.model.entity.PersonneException;
++import MVC.view.Gui.JDialogConnexion;
+ import MVC.view.console.ViewAppartConsole;
+ 
+ public class Main {
+     public static void main(String[] args) {
+         //System.out.println("Hello world!");
+-        Controlleur controlleur = new Controlleur(new DAOEmployes(),new ViewAppartConsole());
+-        controlleur.run();
++        try {
++            controller controller = new controller(new DAOEmployes(),new JDialogConnexion());
++            controller.run();
++        } catch (PersonneException e) {
++            throw new RuntimeException(e);
++        }
++
+     }
+ }
+\ No newline at end of file
+Index: src/MVC/view/Gui/JDialogConnexion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package MVC.view.Gui;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.*;\r\n\r\npublic class JDialogConnexion extends JDialog {\r\n    private JPanel contentPane;\r\n    private JTextField textField1;\r\n    private JPasswordField passwordField1;\r\n    private JButton connexionButton;\r\n    private JLabel connexionLabel;\r\n    private JPanel panel1;\r\n    private JPanel panel2;\r\n    private JButton buttonOK;\r\n    private JButton buttonCancel;\r\n    private static boolean connecte =true;\r\n\r\n    public JDialogConnexion() {\r\n\r\n        setContentPane(contentPane);\r\n        setModal(true);\r\n        getRootPane().setDefaultButton(buttonOK);\r\n        //this.setSize(600, 600);\r\n        this.setPreferredSize(new Dimension(600, 600));\r\n        this.setMinimumSize(new Dimension(600, 600));\r\n        this.setMaximumSize(new Dimension(800, 800));\r\n        setTitle(\"---- | formulaire de connexion |----\");\r\n        createUIComponents();\r\n        // call onCancel() when cross is clicked\r\n        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);\r\n        addWindowListener(new WindowAdapter() {\r\n            public void windowClosing(WindowEvent e) {\r\n                onCancel();\r\n            }\r\n        });\r\n\r\n        // call onCancel() on ESCAPE\r\n        contentPane.registerKeyboardAction(new ActionListener() {\r\n            public void actionPerformed(ActionEvent e) {\r\n                onCancel();\r\n            }\r\n        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);\r\n    }\r\n    private void onOK() {\r\n        // add your code here\r\n        dispose();\r\n    }\r\n\r\n    private void onCancel() {\r\n        // add your code here if necessary\r\n        dispose();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        JDialogConnexion dialog = new JDialogConnexion();\r\n       //JLabel titre = new JLabel(\"Connexion\", SwingConstants.CENTER);\r\n       //dialog.add(titre, BorderLayout.NORTH);\r\n        //gestion_menu(dialog);\r\n\r\n\r\n        dialog.setTitle(\"connexion\");\r\n        dialog.pack();\r\n        dialog.setVisible(true);\r\n        //System.exit(0);\r\n    }\r\n    private  static void gestion_menu(JDialogConnexion dialog){\r\n        JMenuBar menuBar=new JMenuBar();\r\n        JMenu connexion=new JMenu(\"connexion\");\r\n        JMenu employer=new JMenu(\"employer\");\r\n        JMenu apartements=new JMenu(\"apartments\");\r\n        applyMenuStyle(employer);\r\n        applyMenuStyle(connexion);\r\n        applyMenuStyle(apartements);\r\n        menuBar.add(connexion);\r\n        menuBar.add(employer);\r\n        menuBar.add(apartements);\r\n        menuBar.setFont(new Font(Font.SERIF,Font.ITALIC,100));\r\n        dialog.setJMenuBar(menuBar);\r\n    }\r\n    private static void applyMenuStyle(JMenu menu) {\r\n        menu.setFont(new Font(\"Arial Narrow\", Font.ITALIC, 18));\r\n        menu.setForeground(Color.BLUE);\r\n        menu.setBackground(Color.red);\r\n    }\r\n    public boolean getconnecte(){\r\n        return connecte;\r\n    }\r\n    public void setConnecte(boolean a){\r\n        connecte=a;\r\n    }\r\n    private void createUIComponents() {\r\n        textField1 = new JTextField();\r\n        passwordField1 = new JPasswordField();\r\n        connexionButton = new JButton(\"Connexion\");\r\n\r\n       // textField1.setBorder(new border(new Color(28,105,207),7));\r\n       // passwordField1.setBorder(new border(new Color(28,105,207),7));\r\n       // connexionButton.setBackground(new Color(28,105,207));\r\n        //connexionButton.setBorder(new border(new Color(28,105,207),7));\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/MVC/view/Gui/JDialogConnexion.java b/src/MVC/view/Gui/JDialogConnexion.java
+--- a/src/MVC/view/Gui/JDialogConnexion.java	
++++ b/src/MVC/view/Gui/JDialogConnexion.java	
+@@ -3,6 +3,10 @@
+ import javax.swing.*;
+ import java.awt.*;
+ import java.awt.event.*;
++import java.util.Arrays;
++
++import  MVC.model.entity.*;
++import  MVC.controller.*;
+ 
+ public class JDialogConnexion extends JDialog {
+     private JPanel contentPane;
+@@ -12,6 +16,7 @@
+     private JLabel connexionLabel;
+     private JPanel panel1;
+     private JPanel panel2;
++    private JTextField textField2;
+     private JButton buttonOK;
+     private JButton buttonCancel;
+     private static boolean connecte =true;
+@@ -20,13 +25,13 @@
+ 
+         setContentPane(contentPane);
+         setModal(true);
+-        getRootPane().setDefaultButton(buttonOK);
++        getRootPane().setDefaultButton(connexionButton);
+         //this.setSize(600, 600);
+         this.setPreferredSize(new Dimension(600, 600));
+         this.setMinimumSize(new Dimension(600, 600));
+         this.setMaximumSize(new Dimension(800, 800));
+         setTitle("---- | formulaire de connexion |----");
+-        createUIComponents();
++
+         // call onCancel() when cross is clicked
+         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+         addWindowListener(new WindowAdapter() {
+@@ -41,6 +46,8 @@
+                 onCancel();
+             }
+         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
++
++
+     }
+     private void onOK() {
+         // add your code here
+@@ -58,7 +65,6 @@
+        //dialog.add(titre, BorderLayout.NORTH);
+         //gestion_menu(dialog);
+ 
+-
+         dialog.setTitle("connexion");
+         dialog.pack();
+         dialog.setVisible(true);
+@@ -93,10 +99,38 @@
+         textField1 = new JTextField();
+         passwordField1 = new JPasswordField();
+         connexionButton = new JButton("Connexion");
++        connexionButton.setActionCommand("CONNEXION");
+ 
+        // textField1.setBorder(new border(new Color(28,105,207),7));
+        // passwordField1.setBorder(new border(new Color(28,105,207),7));
+        // connexionButton.setBackground(new Color(28,105,207));
+         //connexionButton.setBorder(new border(new Color(28,105,207),7));
+     }
++
++    public Employe getitems(){
++        Employe user=new Employe();
++        user.setNom(textField1.getText());
++        user.setMdp(textField2.getText());
++        return user;
++    }
++
++    public void showErroMessage(String message){
++        JOptionPane.showMessageDialog(this,
++                message,
++                "Pour votre information...",
++                JOptionPane.ERROR_MESSAGE);
++    }
++
++    public void showMessage(String message) {
++        JOptionPane.showMessageDialog(this,
++                message,
++                "Pour votre information...",
++                JOptionPane.INFORMATION_MESSAGE);
++    }
++    public void run() {
++        setVisible(true);
++    }
++    public void setController(controller c) {
++        connexionButton.addActionListener(c);
++    }
+ }
+Index: src/MVC/controller/controller.java
+===================================================================
+diff --git a/src/MVC/controller/controller.java b/src/MVC/controller/controller.java
+new file mode 100644
+--- /dev/null	
++++ b/src/MVC/controller/controller.java	
+@@ -0,0 +1,42 @@
++package MVC.controller;
++
++import MVC.model.DataAccesLayer;
++import MVC.model.DAO.*;
++import MVC.model.entity.Employe;
++import MVC.view.Gui.JDialogConnexion;
++import MVC.view.ViewAppart;
++
++import java.awt.event.ActionEvent;
++import java.awt.event.ActionListener;
++
++public class controller implements ActionListener {
++    private DAOEmployes model;
++    private JDialogConnexion view;
++    public controller(DAOEmployes m, JDialogConnexion J){
++        this.model=m;
++        this.view=J;
++        this.view.setController(this);
++    }
++    public void run(){
++        view.run();
++    }
++    public void actionPerformed(ActionEvent e) {
++        if (e.getActionCommand() == "connexion"){
++
++            Employe employe=view.getitems();
++            if(employe.getNom().isEmpty() || employe.getMdp()==""){
++                System.out.println("Hello world!");
++                view.showMessage("veillez renseigner tous les champs");
++            }
++            else{
++                if(model.containt(employe.getNom(),employe.getMdp())){
++                    view.showMessage("bienvenue");
++                }
++                else{
++                    view.showErroMessage("l'utilisateur n'existe pas dans la bd");
++                }
++            }
++        }
++
++    }
++}
+Index: src/MVC/view/Gui/JdialogNouveauClient.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package MVC.view.Gui;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.event.*;\r\n\r\npublic class JdialogNouveauClient extends JDialog {\r\n    private JPanel contentPane;\r\n    private JButton buttonCreer;\r\n    private JButton buttonAnnuler;\r\n    private JTextField textFieldNom;\r\n    private JTextField textFieldPrenom;\r\n    private JTextField textFieldGSM;\r\n    private String nom;\r\n    private JLabel JLabelNom;\r\n    private JLabel JLabelPrenom;\r\n    private JLabel JLabelGSM;\r\n    private String prenom;\r\n    private String gsm;\r\n\r\n    public JdialogNouveauClient() {\r\n\r\n        JDialogConnexion formconnection=new JDialogConnexion();\r\n        if(!formconnection.getconnecte()){\r\n            formconnection.pack();\r\n            formconnection.setVisible(true);\r\n            formconnection.setConnecte(true);\r\n        }\r\n        if(formconnection.getconnecte()) {\r\n            setContentPane(contentPane);\r\n            setModal(true);\r\n            getRootPane().setDefaultButton(buttonCreer);\r\n            setTitle(\"----| Nouveau Client |----\");\r\n\r\n            buttonCreer.addActionListener(new ActionListener() {\r\n                public void actionPerformed(ActionEvent e) {\r\n                    nom = textFieldNom.getText();\r\n                    prenom = textFieldPrenom.getText();\r\n                    gsm = textFieldGSM.getText();\r\n                    setVisible(false); // Assumant que vous souhaitez fermer ce dialogue après création.\r\n                }\r\n            });\r\n\r\n            buttonAnnuler.addActionListener(new ActionListener() {\r\n                public void actionPerformed(ActionEvent e) {\r\n                    setVisible(false);\r\n                }\r\n            });\r\n\r\n            // Gérer la fermeture de la fenêtre via la croix\r\n            setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);\r\n            addWindowListener(new WindowAdapter() {\r\n                public void windowClosing(WindowEvent e) {\r\n                    onCancel();\r\n                }\r\n            });\r\n        }\r\n    }\r\n\r\n    private void onCancel() {\r\n        // Mettez ici le code à exécuter lorsque l'utilisateur ferme le dialogue via la croix\r\n        setVisible(false);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        JdialogNouveauClient dialog = new JdialogNouveauClient();\r\n        dialog.pack();\r\n        dialog.setVisible(true);\r\n        System.exit(0);\r\n    }\r\n\r\n    public String getNom() {\r\n        return nom;\r\n    }\r\n\r\n    public String getPrenom() {\r\n        return prenom;\r\n    }\r\n\r\n    public String getGSM() {\r\n        return gsm;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/MVC/view/Gui/JdialogNouveauClient.java b/src/MVC/view/Gui/JdialogNouveauClient.java
+--- a/src/MVC/view/Gui/JdialogNouveauClient.java	
++++ b/src/MVC/view/Gui/JdialogNouveauClient.java	
+@@ -1,7 +1,9 @@
+ package MVC.view.Gui;
+ 
++
+ import javax.swing.*;
+ import java.awt.event.*;
++import java.util.ArrayList;
+ 
+ public class JdialogNouveauClient extends JDialog {
+     private JPanel contentPane;
+@@ -61,6 +63,7 @@
+         setVisible(false);
+     }
+ 
++
+     public static void main(String[] args) {
+         JdialogNouveauClient dialog = new JdialogNouveauClient();
+         dialog.pack();
+@@ -79,4 +82,6 @@
+     public String getGSM() {
+         return gsm;
+     }
++//----------------------------------------------------------------
++
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6102baac-c2d9-496a-bebd-d3f18fb61273\" name=\"Changes\" comment=\"ajout du Controlleur et view\">\r\n\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml\" afterDir=\"false\" />\r\n\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"stanela\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eJsVVfbofTnEttMu73EXuGqIi8\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Appartement.executor\": \"Run\",\r\n    \"Application.Client.executor\": \"Run\",\r\n    \"Application.DAOAppartements.executor\": \"Run\",\r\n    \"Application.DAOClients.executor\": \"Run\",\r\n    \"Application.DAOEmployes.executor\": \"Run\",\r\n    \"Application.Employe.executor\": \"Run\",\r\n    \"Application.JDialogAppart.executor\": \"Run\",\r\n    \"Application.JDialogConnexion.executor\": \"Run\",\r\n    \"Application.JDialogNewClient.executor\": \"Run\",\r\n    \"Application.JDialogNouveauEmploye.executor\": \"Run\",\r\n    \"Application.JDialogNouvelAppart.executor\": \"Run\",\r\n    \"Application.JFrameFenetreFinal.executor\": \"Run\",\r\n    \"Application.JFrameReservation.executor\": \"Run\",\r\n    \"Application.JdialogNouveauClient.executor\": \"Run\",\r\n    \"Application.MVC.model.entity.Client.executor\": \"Run\",\r\n    \"Application.MVC.model.entity.Employe.executor\": \"Run\",\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"Application.Option.executor\": \"Run\",\r\n    \"Application.Personne.executor\": \"Run\",\r\n    \"Application.Reservation.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH\": \"110\",\r\n    \"UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH\": \"229\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"D:/JAVA/GestionProjetJava/src/MVC\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"settings.editor.selected.configurable\": \"configurable.group.editor\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\JAVA\\GestionProjetJava\\src\\MVC\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.JFrameFenetreFinal\">\r\n\r\n    <configuration name=\"Appartement\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.model.entity.Appartement\" />\r\n\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.model.entity.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JDialogconnexion\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JDialogconnexion\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n\r\n    <configuration name=\"JFrameFenetreFinal\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JFrameFenetreFinal\" />\r\n\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JdialogNouveauClient\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MVC.view.Gui.JdialogNouveauClient\" />\r\n      <module name=\"GestionProjetJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"MVC.view.Gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n\r\n      <module name=\"GestionProjetJava\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.JFrameFenetreFinal\" />\r\n        <item itemvalue=\"Application.JdialogNouveauClient\" />\r\n        <item itemvalue=\"Application.JDialogconnexion\" />\r\n        <item itemvalue=\"Application.Appartement\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-22-openjdk-22-4caba194b151-f504ca98\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6102baac-c2d9-496a-bebd-d3f18fb61273\" name=\"Changes\" comment=\"\" />\r\n      <created>1711634042286</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1711634042286</updated>\r\n      <workItem from=\"1711634043357\" duration=\"13874000\" />\r\n      <workItem from=\"1711708174507\" duration=\"3695000\" />\r\n      <workItem from=\"1712010116714\" duration=\"949000\" />\r\n      <workItem from=\"1712049159798\" duration=\"9359000\" />\r\n      <workItem from=\"1712078855309\" duration=\"11180000\" />\r\n      <workItem from=\"1712219675115\" duration=\"7260000\" />\r\n      <workItem from=\"1712824690703\" duration=\"5698000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"class vide\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712010749666</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712010749666</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"creation de boite de dialog, empl et client\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712059680293</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712059680293</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"creation de la boite dialog new appart + GUI\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712088015128</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712088015128</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"ajout de photo appart\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712088035700</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712088035700</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"correction et adaptation des classe, il reste Reservation.java\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712092470623</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712092470623</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"on est pret pour la 1er Eval\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712226894342</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712226894342</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"ajout package MVC\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712825209851</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712825209851</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"ajout package MVC2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712825394869</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712825394869</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"ajout du Controlleur et view\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713199033351</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713199033351</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/stanela\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"class vide\" />\r\n    <MESSAGE value=\"creation de boite de dialog, empl et client\" />\r\n    <MESSAGE value=\"creation de la boite dialog new appart + GUI\" />\r\n    <MESSAGE value=\"ajout de photo appart\" />\r\n    <MESSAGE value=\"correction et adaptation des classe, il reste Reservation.java\" />\r\n    <MESSAGE value=\"on est pret pour la 1er Eval\" />\r\n    <MESSAGE value=\"ajout package MVC\" />\r\n    <MESSAGE value=\"ajout package MVC2\" />\r\n    <MESSAGE value=\"Merge pull request #1 from 0994812157/stanela&#10;&#10;ajout package MVC2\" />\r\n    <MESSAGE value=\"ajout du Controlleur et view\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"ajout du Controlleur et view\" />\r\n\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,11 +4,25 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6102baac-c2d9-496a-bebd-d3f18fb61273" name="Changes" comment="ajout du Controlleur et view">
+-
++    <list default="true" id="6102baac-c2d9-496a-bebd-d3f18fb61273" name="Changes" comment="change">
++      <change afterPath="$PROJECT_DIR$/src/MVC/controller/controller.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_05_2024_10_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_05_2024_10_59__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_20_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_20_23__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_21_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_21_51__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_22_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_2024_22_01__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2024_19_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2024_19_01__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_04_2024_19_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_04_2024_19_07__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_21_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_05_2024_21_54__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2024_14_57__Changes_.xml" afterDir="false" />
+-
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/MVC/controller/ControlleurActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/controller/ControlleurActions.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/MVC/model/DAO/DAOEmployes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/model/DAO/DAOEmployes.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogConnexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogConnexion.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogconnexion.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogconnexion.form" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogmessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JDialogmessage.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/view/Gui/JdialogNouveauClient.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -32,7 +46,7 @@
+     </option>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="stanela" />
++        <entry key="$PROJECT_DIR$" value="main" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -59,6 +73,7 @@
+     "Application.JDialogNewClient.executor": "Run",
+     "Application.JDialogNouveauEmploye.executor": "Run",
+     "Application.JDialogNouvelAppart.executor": "Run",
++    "Application.JDialogmessage.executor": "Run",
+     "Application.JFrameFenetreFinal.executor": "Run",
+     "Application.JFrameReservation.executor": "Run",
+     "Application.JdialogNouveauClient.executor": "Run",
+@@ -73,7 +88,7 @@
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "110",
+     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "229",
+-    "git-widget-placeholder": "main",
++    "git-widget-placeholder": "stanela1",
+     "kotlin-language-version-configured": "true",
+     "last_opened_file_path": "D:/JAVA/GestionProjetJava/src/MVC",
+     "node.js.detected.package.eslint": "true",
+@@ -81,7 +96,7 @@
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "configurable.group.editor",
++    "settings.editor.selected.configurable": "preferences.pluginManager",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+@@ -90,11 +105,9 @@
+       <recent name="D:\JAVA\GestionProjetJava\src\MVC" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.JFrameFenetreFinal">
+-
+-    <configuration name="Appartement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="MVC.model.entity.Appartement" />
+-
++  <component name="RunManager" selected="Application.Main">
++    <configuration name="Employe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="MVC.model.entity.Employe" />
+       <module name="GestionProjetJava" />
+       <extension name="coverage">
+         <pattern>
+@@ -106,8 +119,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="JDialogconnexion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="MVC.view.Gui.JDialogconnexion" />
++    <configuration name="JDialogConnexion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="MVC.view.Gui.JDialogConnexion" />
+       <module name="GestionProjetJava" />
+       <extension name="coverage">
+         <pattern>
+@@ -119,10 +132,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-
+-    <configuration name="JFrameFenetreFinal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="MVC.view.Gui.JFrameFenetreFinal" />
+-
++    <configuration name="JDialogmessage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="MVC.view.Gui.JDialogmessage" />
+       <module name="GestionProjetJava" />
+       <extension name="coverage">
+         <pattern>
+@@ -134,8 +145,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="JdialogNouveauClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="MVC.view.Gui.JdialogNouveauClient" />
++    <configuration name="JFrameFenetreFinal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="MVC.view.Gui.JFrameFenetreFinal" />
+       <module name="GestionProjetJava" />
+       <extension name="coverage">
+         <pattern>
+@@ -147,10 +158,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="Main" />
+-
+       <module name="GestionProjetJava" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -159,10 +168,10 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.Main" />
++        <item itemvalue="Application.Employe" />
++        <item itemvalue="Application.JDialogConnexion" />
++        <item itemvalue="Application.JDialogmessage" />
+         <item itemvalue="Application.JFrameFenetreFinal" />
+-        <item itemvalue="Application.JdialogNouveauClient" />
+-        <item itemvalue="Application.JDialogconnexion" />
+-        <item itemvalue="Application.Appartement" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -261,35 +270,20 @@
+       <option name="project" value="LOCAL" />
+       <updated>1713199033351</updated>
+     </task>
+-    <option name="localTasksCounter" value="10" />
++    <task id="LOCAL-00010" summary="ajout du Controlleur et view">
++      <option name="closed" value="true" />
++      <created>1715714910323</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1715714910323</updated>
++    </task>
++    <option name="localTasksCounter" value="11" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="origin/stanela" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="class vide" />
+     <MESSAGE value="creation de boite de dialog, empl et client" />
+@@ -302,6 +296,16 @@
+     <MESSAGE value="Merge pull request #1 from 0994812157/stanela&#10;&#10;ajout package MVC2" />
+     <MESSAGE value="ajout du Controlleur et view" />
+     <option name="LAST_COMMIT_MESSAGE" value="ajout du Controlleur et view" />
+-
++  </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/MVC/view/Gui/JDialogConnexion.java</url>
++          <line>57</line>
++          <option name="timeStamp" value="11" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/MVC/view/Gui/JDialogmessage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package MVC.view.Gui;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.event.*;\r\n\r\npublic class JDialogmessage extends JDialog {\r\n    private JPanel contentPane;\r\n    private JButton buttonOK;\r\n    private JButton buttonCancel;\r\n    private JLabel texteLabel;\r\n\r\n    public JDialogmessage(String a) {\r\n        setContentPane(contentPane);\r\n        setModal(true);\r\n        getRootPane().setDefaultButton(buttonOK);\r\n        texteLabel.setText(a);\r\n        buttonOK.addActionListener(new ActionListener() {\r\n            public void actionPerformed(ActionEvent e) {\r\n                onOK();\r\n            }\r\n        });\r\n\r\n        buttonCancel.addActionListener(new ActionListener() {\r\n            public void actionPerformed(ActionEvent e) {\r\n                onCancel();\r\n            }\r\n        });\r\n\r\n        // call onCancel() when cross is clicked\r\n        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);\r\n        addWindowListener(new WindowAdapter() {\r\n            public void windowClosing(WindowEvent e) {\r\n                onCancel();\r\n            }\r\n        });\r\n\r\n        // call onCancel() on ESCAPE\r\n        contentPane.registerKeyboardAction(new ActionListener() {\r\n            public void actionPerformed(ActionEvent e) {\r\n                onCancel();\r\n            }\r\n        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);\r\n    }\r\n\r\n    private void onOK() {\r\n        // add your code here\r\n        dispose();\r\n    }\r\n\r\n    private void onCancel() {\r\n        // add your code here if necessary\r\n        dispose();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        JDialogmessage dialog = new JDialogmessage(\"bonjour\");\r\n        dialog.pack();\r\n        dialog.setVisible(true);\r\n        System.exit(0);\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/MVC/view/Gui/JDialogmessage.java b/src/MVC/view/Gui/JDialogmessage.java
+--- a/src/MVC/view/Gui/JDialogmessage.java	
++++ b/src/MVC/view/Gui/JDialogmessage.java	
+@@ -17,6 +17,7 @@
+         buttonOK.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                 onOK();
++                System.out.println("Le bouton de connexion a été cliqué.");
+             }
+         });
+ 
+Index: src/MVC/view/Gui/JDialogconnexion.form
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<form xmlns=\"http://www.intellij.com/uidesigner/form/\" version=\"1\" bind-to-class=\"MVC.view.Gui.JDialogConnexion\">\r\n  <grid id=\"cbd77\" binding=\"contentPane\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"0\" vgap=\"-1\">\r\n    <margin top=\"10\" left=\"10\" bottom=\"10\" right=\"10\"/>\r\n    <constraints>\r\n      <xy x=\"35\" y=\"54\" width=\"449\" height=\"511\"/>\r\n    </constraints>\r\n    <properties>\r\n      <maximumSize width=\"600\" height=\"606\"/>\r\n      <minimumSize width=\"400\" height=\"406\"/>\r\n      <preferredSize width=\"400\" height=\"406\"/>\r\n    </properties>\r\n    <border type=\"none\"/>\r\n    <children>\r\n      <grid id=\"4dc00\" binding=\"panel1\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\r\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\r\n        <constraints>\r\n          <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\">\r\n            <minimum-size width=\"400\" height=\"406\"/>\r\n            <preferred-size width=\"400\" height=\"406\"/>\r\n            <maximum-size width=\"600\" height=\"606\"/>\r\n          </grid>\r\n        </constraints>\r\n        <properties/>\r\n        <border type=\"none\"/>\r\n        <children>\r\n          <grid id=\"bbc98\" binding=\"panel2\" layout-manager=\"GridLayoutManager\" row-count=\"4\" column-count=\"2\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\r\n            <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\r\n            <constraints>\r\n              <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\">\r\n                <minimum-size width=\"400\" height=\"406\"/>\r\n                <preferred-size width=\"400\" height=\"406\"/>\r\n                <maximum-size width=\"600\" height=\"606\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties/>\r\n            <border type=\"none\"/>\r\n            <children>\r\n              <component id=\"3707\" class=\"javax.swing.JPasswordField\" binding=\"passwordField1\" custom-create=\"true\" default-binding=\"true\">\r\n                <constraints>\r\n                  <grid row=\"2\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\r\n                    <minimum-size width=\"300\" height=\"-1\"/>\r\n                    <preferred-size width=\"300\" height=\"-1\"/>\r\n                    <maximum-size width=\"500\" height=\"-1\"/>\r\n                  </grid>\r\n                </constraints>\r\n                <properties/>\r\n              </component>\r\n              <component id=\"a5a2e\" class=\"javax.swing.JLabel\" binding=\"connexionLabel\">\r\n                <constraints>\r\n                  <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n                </constraints>\r\n                <properties>\r\n                  <foreground color=\"-14989595\"/>\r\n                  <text value=\"Connexion\"/>\r\n                </properties>\r\n              </component>\r\n              <component id=\"f8112\" class=\"javax.swing.JTextField\" binding=\"textField1\" custom-create=\"true\" default-binding=\"true\">\r\n                <constraints>\r\n                  <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\r\n                    <minimum-size width=\"300\" height=\"-1\"/>\r\n                    <preferred-size width=\"150\" height=\"-1\"/>\r\n                    <maximum-size width=\"500\" height=\"-1\"/>\r\n                  </grid>\r\n                </constraints>\r\n                <properties/>\r\n              </component>\r\n              <component id=\"89d9d\" class=\"javax.swing.JButton\" binding=\"connexionButton\" custom-create=\"true\" default-binding=\"true\">\r\n                <constraints>\r\n                  <grid row=\"3\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\r\n                    <minimum-size width=\"300\" height=\"-1\"/>\r\n                    <preferred-size width=\"300\" height=\"-1\"/>\r\n                    <maximum-size width=\"500\" height=\"-1\"/>\r\n                  </grid>\r\n                </constraints>\r\n                <properties>\r\n                  <text value=\"connexion\"/>\r\n                </properties>\r\n              </component>\r\n            </children>\r\n          </grid>\r\n          <grid id=\"a66f0\" layout-manager=\"GridLayoutManager\" row-count=\"1\" column-count=\"1\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\r\n            <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\r\n            <constraints>\r\n              <grid row=\"1\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\">\r\n                <minimum-size width=\"400\" height=\"-1\"/>\r\n                <preferred-size width=\"400\" height=\"-1\"/>\r\n                <maximum-size width=\"600\" height=\"-1\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties>\r\n              <autoscrolls value=\"false\"/>\r\n            </properties>\r\n            <border type=\"none\"/>\r\n            <children/>\r\n          </grid>\r\n        </children>\r\n      </grid>\r\n    </children>\r\n  </grid>\r\n</form>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/MVC/view/Gui/JDialogconnexion.form b/src/MVC/view/Gui/JDialogconnexion.form
+--- a/src/MVC/view/Gui/JDialogconnexion.form	
++++ b/src/MVC/view/Gui/JDialogconnexion.form	
+@@ -36,16 +36,6 @@
+             <properties/>
+             <border type="none"/>
+             <children>
+-              <component id="3707" class="javax.swing.JPasswordField" binding="passwordField1" custom-create="true" default-binding="true">
+-                <constraints>
+-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+-                    <minimum-size width="300" height="-1"/>
+-                    <preferred-size width="300" height="-1"/>
+-                    <maximum-size width="500" height="-1"/>
+-                  </grid>
+-                </constraints>
+-                <properties/>
+-              </component>
+               <component id="a5a2e" class="javax.swing.JLabel" binding="connexionLabel">
+                 <constraints>
+                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+@@ -55,7 +45,7 @@
+                   <text value="Connexion"/>
+                 </properties>
+               </component>
+-              <component id="f8112" class="javax.swing.JTextField" binding="textField1" custom-create="true" default-binding="true">
++              <component id="f8112" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                 <constraints>
+                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                     <minimum-size width="300" height="-1"/>
+@@ -65,7 +55,7 @@
+                 </constraints>
+                 <properties/>
+               </component>
+-              <component id="89d9d" class="javax.swing.JButton" binding="connexionButton" custom-create="true" default-binding="true">
++              <component id="89d9d" class="javax.swing.JButton" binding="connexionButton" default-binding="true">
+                 <constraints>
+                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                     <minimum-size width="300" height="-1"/>
+@@ -76,6 +66,16 @@
+                 <properties>
+                   <text value="connexion"/>
+                 </properties>
++              </component>
++              <component id="5b31b" class="javax.swing.JTextField" binding="textField2">
++                <constraints>
++                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
++                    <minimum-size width="300" height="-1"/>
++                    <preferred-size width="150" height="-1"/>
++                    <maximum-size width="500" height="-1"/>
++                  </grid>
++                </constraints>
++                <properties/>
+               </component>
+             </children>
+           </grid>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_X\" default=\"true\" project-jdk-name=\"22\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="22" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="22" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/MVC/controller/ControlleurActions.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package MVC.controller;\r\n\r\npublic abstract class ControlleurActions {\r\n    public static final String ADD = \"Ajouter\";\r\n    public static final String UPDATE = \"Modifier\";\r\n    public static final String DELETE = \"Supprimer\";\r\n}\r\n
+===================================================================
+diff --git a/src/MVC/controller/ControlleurActions.java b/src/MVC/controller/ControlleurActions.java
+--- a/src/MVC/controller/ControlleurActions.java	
++++ b/src/MVC/controller/ControlleurActions.java	
+@@ -4,4 +4,5 @@
+     public static final String ADD = "Ajouter";
+     public static final String UPDATE = "Modifier";
+     public static final String DELETE = "Supprimer";
++    public static final String Connexion = "connexion";
+ }
+Index: src/MVC/model/DAO/DAOEmployes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package MVC.model.DAO;\r\n\r\nimport MVC.model.DataAccesLayer;\r\nimport MVC.model.entity.Appartement;\r\nimport MVC.model.entity.Client;\r\nimport MVC.model.entity.Employe;\r\nimport MVC.model.entity.PersonneException;\r\n\r\nimport java.time.LocalDate;\r\nimport java.util.ArrayList;\r\n\r\npublic class DAOEmployes implements DataAccesLayer {\r\n    private ArrayList<Employe> employes;\r\n    private int idcourant = 1;\r\n\r\n    public DAOEmployes() {\r\n        employes = new ArrayList<>();\r\n    }\r\n\r\n    @Override\r\n    public int addItem(Object employe) {\r\n        if (employe instanceof Employe) {\r\n            ((Employe) employe).setMatricule(idcourant++);\r\n            employes.add((Employe) employe);\r\n            return ((Employe) employe).getMatricule();\r\n        }\r\n        return -1;\r\n    }\r\n\r\n    @Override\r\n    public boolean updateItem(Object employe) {\r\n        if (employe instanceof Employe) {\r\n            Employe updateItem = (Employe) employe;\r\n            for (int i = 0; i < employes.size(); i++) {\r\n                if (employes.get(i) != null && ((Employe) employes.get(i)).getMatricule() == updateItem.getMatricule())\r\n                {\r\n                    employes.set(i, updateItem);\r\n                    return true;\r\n                }\r\n            }\r\n        }\r\n        return false;\r\n    }\r\n\r\n    @Override\r\n    public boolean deleteItem(int id) {\r\n        return employes.removeIf(a -> a != null && ((Employe) a).getMatricule() == id);\r\n    }\r\n\r\n    @Override\r\n    public boolean deleteItem(Object employe) {\r\n        return employes.remove(employe);\r\n    }\r\n\r\n    @Override\r\n    public Object getItemById(int id) {\r\n        for (Object a : employes) {\r\n            if (a instanceof Employe && ((Employe) a).getMatricule() == id)\r\n            {\r\n                return a;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    @Override\r\n    public ArrayList<Object> getList() {\r\n        ArrayList<Object> copy = new ArrayList<>();\r\n        for (Object a : employes) {\r\n            if (a instanceof Employe) {\r\n                copy.add(((Employe)a).clone());\r\n            }\r\n        }\r\n        return copy;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"DAOClients{\" +\r\n                \"employe=\" + employes +\r\n                '}';\r\n    }\r\n\r\n    public static void main(String[] args)\r\n    {\r\n        DataAccesLayer dao = new DAOEmployes();\r\n        try {\r\n            dao.addItem(new Employe());\r\n            dao.addItem(new Employe(\"appart1\",\"ffgtd\", LocalDate.of(1998,2,17),508,\"fonction1\",\"mdp\"));\r\n            dao.addItem(new Employe(\"cerises\",\"ihhffgcvxd\",LocalDate.of(2002,7,31),040,\"f2\",\"xxx\"));\r\n            dao.addItem(new Client());\r\n            System.out.println(dao);\r\n            Employe a = (Employe) dao.getItemById(1);\r\n            System.out.println(\"Employe ayant l'id 1 = \" + a);\r\n            a.setFonction(\"manager\");\r\n            dao.updateItem(a);\r\n            System.out.println(dao);\r\n            dao.deleteItem(3);\r\n            System.out.println(dao);\r\n        } catch (PersonneException e) {\r\n            System.out.println(\"Erreur : \" + e.getMessage());\r\n        }\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/MVC/model/DAO/DAOEmployes.java b/src/MVC/model/DAO/DAOEmployes.java
+--- a/src/MVC/model/DAO/DAOEmployes.java	
++++ b/src/MVC/model/DAO/DAOEmployes.java	
+@@ -13,8 +13,10 @@
+     private ArrayList<Employe> employes;
+     private int idcourant = 1;
+ 
+-    public DAOEmployes() {
++    public DAOEmployes() throws PersonneException {
+         employes = new ArrayList<>();
++        Employe employe = new Employe("Doe", "John", LocalDate.of(1980, 4, 15), 12345, "EMPLOYE", "password123");
++        employes.add(employe);
+     }
+ 
+     @Override
+@@ -73,6 +75,21 @@
+         }
+         return copy;
+     }
++    public boolean containt(String nom,String mdp)
++    {
++        for (int i = 0; i < employes.size(); i++) {
++            System.out.println(nom);
++            System.out.println(mdp);
++            System.out.println(employes.get(i).getNom());
++            System.out.println(employes.get(i).getMdp());
++            System.out.println(nom==employes.get(i).getNom());
++            if(employes.get(i).getNom()==nom && employes.get(i).getMdp()==mdp){
++
++                return true;
++            }
++        }
++        return false;
++    }
+ 
+     @Override
+     public String toString() {
+@@ -83,8 +100,9 @@
+ 
+     public static void main(String[] args)
+     {
+-        DataAccesLayer dao = new DAOEmployes();
++
+         try {
++            DataAccesLayer dao = new DAOEmployes();
+             dao.addItem(new Employe());
+             dao.addItem(new Employe("appart1","ffgtd", LocalDate.of(1998,2,17),508,"fonction1","mdp"));
+             dao.addItem(new Employe("cerises","ihhffgcvxd",LocalDate.of(2002,7,31),040,"f2","xxx"));

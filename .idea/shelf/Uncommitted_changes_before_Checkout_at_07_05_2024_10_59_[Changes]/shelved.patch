@@ -1,0 +1,54 @@
+Index: src/MVC/view/Gui/JDialogconnexion.java
+===================================================================
+diff --git a/src/MVC/view/Gui/JDialogconnexion.java b/src/MVC/view/Gui/JDialogmessage.java
+rename from src/MVC/view/Gui/JDialogconnexion.java
+rename to src/MVC/view/Gui/JDialogmessage.java
+--- a/src/MVC/view/Gui/JDialogconnexion.java	
++++ b/src/MVC/view/Gui/JDialogmessage.java	
+@@ -3,25 +3,30 @@
+ import javax.swing.*;
+ import java.awt.event.*;
+ 
+-public class JDialogconnexion extends JDialog {
++public class JDialogmessage extends JDialog {
+     private JPanel contentPane;
+-    private JTextField textField1;
+-    private JTextField textField2;
+-    private JButton connexionButton;
+     private JButton buttonOK;
+     private JButton buttonCancel;
++    private JLabel label1;
+ 
+-    public JDialogconnexion() {
++    public JDialogmessage(String a) {
++
+         setContentPane(contentPane);
+         setModal(true);
+         getRootPane().setDefaultButton(buttonOK);
+-        setTitle("---- | formulaire de connexion |----");
+-        connexionButton.addActionListener(new ActionListener() {
++        label1.setText(a);
++        buttonOK.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                 onOK();
+             }
+         });
+ 
++        buttonCancel.addActionListener(new ActionListener() {
++            public void actionPerformed(ActionEvent e) {
++                onCancel();
++            }
++        });
++
+         // call onCancel() when cross is clicked
+         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+         addWindowListener(new WindowAdapter() {
+@@ -49,7 +54,7 @@
+     }
+ 
+     public static void main(String[] args) {
+-        JDialogconnexion dialog = new JDialogconnexion();
++        JDialogmessage dialog = new JDialogmessage("rien");
+         dialog.pack();
+         dialog.setVisible(true);
+         System.exit(0);
